@@ -10,4 +10,5 @@
     <string name="TextFourOnBoarding">\u25CF Confirm on Friday for the next week: +2 leafs\n\u25CF Confirm before Monday 8:00 for the same week: +1 leaf \n\u25CF Cancel same day after 8:00: -1 leaf \n\u25CF No Confirmation at all: -1 leaf \n\u25CF Collect 20 Leafs and get rewarded with your own plant. \n</string>
     <string name="Next">Next</string>
     <string name="CollectSlogan">Collect 20 Leaves and\n get rewarded with\n your own plant.</string>
+    <string name="whatsYourName">What's your name?</string>
 </resources>
