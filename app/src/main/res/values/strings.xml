@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">IceGreen</string>
+    <string name="TitleOneOnboarding">/ Welcome to the IceGreen family!</string>
+    <string name="TitleTwoOnboarding">/ So what's next?</string>
+    <string name="TitleThreeOnboarding">/ Sustainable behaior needs to be (green) rewarded!</string>
+    <string name="TitleFourOnboarding">/ How does it work?</string>
+    <string name="TextOneOnBoarding">You are now contributing to limit food waste and a more sustainable IceMobile (world)! </string>
+    <string name="TextTwoOnBoarding">Let Michiel and his companions know on a weekly basis when you attend lunch at Ice. This way Michiel can adjust the groceries and we all waste less food.</string>
+    <string name="TextThreeOnBoarding">By correctly indicating your presence at lunch you can earn leafs. </string>
+    <string name="TextFourOnBoarding">\u25CF Confirm on Friday for the next week: +2 leafs\n\u25CF Confirm before Monday 8:00 for the same week: +1 leaf \n\u25CF Cancel same day after 8:00: -1 leaf \n\u25CF No Confirmation at all: -1 leaf \n\u25CF Collect 20 Leafs and get rewarded with your own plant. \n</string>
+    <string name="Next">Next</string>
+    <string name="CollectSlogan">Collect 20 Leaves and\n get rewarded with\n your own plant.</string>
 </resources>
