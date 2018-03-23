@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">IceGreen</string>
     <string name="TitleOneOnboarding">/ Welcome to the IceGreen family!</string>
-    <string name="TitleTwoOnboarding">/ So what's next?</string>
+    <string name="TitleTwoOnboarding">/ "So what's next?"</string>
     <string name="TitleThreeOnboarding">/ Sustainable behaior needs to be (green) rewarded!</string>
     <string name="TitleFourOnboarding">/ How does it work?</string>
     <string name="TextOneOnBoarding">You are now contributing to limit food waste and a more sustainable IceMobile (world)! </string>
@@ -10,5 +10,11 @@
     <string name="TextFourOnBoarding">\u25CF Confirm on Friday for the next week: +2 leafs\n\u25CF Confirm before Monday 8:00 for the same week: +1 leaf \n\u25CF Cancel same day after 8:00: -1 leaf \n\u25CF No Confirmation at all: -1 leaf \n\u25CF Collect 20 Leafs and get rewarded with your own plant. \n</string>
     <string name="Next">Next</string>
     <string name="CollectSlogan">Collect 20 Leaves and\n get rewarded with\n your own plant.</string>
-    <string name="whatsYourName">What's your name?</string>
+    <string name="whatsYourName">"What's your name?"</string>
+    <string name="LoginHiHeading">/ Hi </string>
+    <string name="Username">[Name Space]</string>
+    <string name="workAtIce">We see you are working at Ice, so we pre-filled your lunch schedule for you.</string>
+    <string name="workAtBL">We see you are working at BL, so we pre-filled your lunch schedule for you.</string>
+    <string name="workAtABN">We see you are working at ABN, so we pre-filled your lunch schedule for you.</string>
+    <string name="LetMichKnow">Let Michiel know when you are <b>NOT</b> having lunch at ICE</string>
 </resources>
