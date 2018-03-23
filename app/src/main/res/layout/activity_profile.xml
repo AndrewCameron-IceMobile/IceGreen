@@ -18,15 +18,15 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:src="@drawable/ic_chevron_left_black_24dp"
-                android:textSize="60dp"
                 android:textColor="@color/white"
                 android:clickable="true"
                 android:onClick="returnToLogin"/>
             <ImageView
+                android:id="@+id/profile_pic"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:src="@drawable/profile"
                 android:layout_marginLeft="200dp"/>
         </LinearLayout>
@@ -59,7 +59,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/WelcomeUser"
-            android:paddingTop="10dp">
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,11 +68,64 @@
                 android:textColor="@color/white"
                 android:textSize="16dp"/>
         </LinearLayout>
+
         <RelativeLayout
-            android:paddingTop="40dp"
+            android:id="@+id/weekly_schedule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/CompanyIdentificationString">
+            android:layout_below="@+id/CompanyIdentificationString"
+            android:background="@drawable/button"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+            <com.nex3z.togglebuttongroup.MultiSelectToggleGroup
+                android:id="@+id/day_choices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.nex3z.togglebuttongroup.button.CircularToggle
+                    android:id="@+id/monday_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Mon"/>
+                <com.nex3z.togglebuttongroup.button.CircularToggle
+                    android:id="@+id/tuesday_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Tue"/>
+                <com.nex3z.togglebuttongroup.button.CircularToggle
+                    android:id="@+id/wednesday_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Wed"/>
+                <com.nex3z.togglebuttongroup.button.CircularToggle
+                    android:id="@+id/thursday_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Thu"/>
+                <com.nex3z.togglebuttongroup.button.CircularToggle
+                    android:id="@+id/friday_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Fri"/>
+
+            </com.nex3z.togglebuttongroup.MultiSelectToggleGroup>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weekly_schedule">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,9 +154,9 @@
     <LinearLayout
         android:layout_below="@+id/Week"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:paddingTop="30dp"
+        android:paddingTop="60dp"
         android:paddingBottom="30dp">
         <TextView
             android:gravity="center"
