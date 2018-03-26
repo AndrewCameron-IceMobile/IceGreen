@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:layout_marginBottom="@dimen/ButtonDIstanceFromBottom">
 
         <FrameLayout
             android:id="@+id/main_logo_home"

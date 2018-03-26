@@ -67,18 +67,22 @@
         android:layout_below="@+id/enterNameBox"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:paddingTop="170dp">
-
-        <TextView
-            android:layout_width="wrap_content"
+        android:gravity="bottom">
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Next"
-            android:background="@drawable/button"
             android:gravity="center"
-            android:textColor="@color/colorDarkLeaf"
-            android:textSize="22dp"
-            android:onClick="goToProfile"/>
+            android:layout_marginBottom="@dimen/ButtonDIstanceFromBottom">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Next"
+                android:background="@drawable/button"
+                android:gravity="center"
+                android:textColor="@color/colorDarkLeaf"
+                android:textSize="22dp"
+                android:onClick="goToProfile"/>
+        </RelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>
