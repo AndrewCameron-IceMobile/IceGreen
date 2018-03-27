@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.icemobile.icegreen.LeaderboardActivity"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/leaves_background"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
