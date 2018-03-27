@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.icemobile.icegreen.LoginActivity"
     android:orientation="vertical"
-    android:background="@color/colorPrimary">
+    android:background="@drawable/leaves_background">
 
     <FrameLayout
         android:id="@+id/main_logo_login"

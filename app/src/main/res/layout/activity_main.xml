@@ -6,13 +6,12 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@color/colorPrimary">
+    android:background="@drawable/leaves_background">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:background="@color/colorPrimary"
         android:layout_marginBottom="@dimen/ButtonDIstanceFromBottom">
 
         <FrameLayout

@@ -2,13 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/leaves_background"
     android:gravity="center_horizontal">
     <RelativeLayout
         android:id="@+id/UserInformation"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
         android:orientation="vertical"
         android:paddingTop="35dp"
         android:paddingLeft="20dp"
