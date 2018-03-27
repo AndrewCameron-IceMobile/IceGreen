@@ -17,4 +17,11 @@
     <string name="workAtBL">We see you are working at BL, so we pre-filled your lunch schedule for you.</string>
     <string name="workAtABN">We see you are working at ABN, so we pre-filled your lunch schedule for you.</string>
     <string name="LetMichKnow">Let Michiel know when you are <b>NOT</b> having lunch at ICE</string>
+    <string name="plus">+ </string>
+    <string name="currentLeavesNumber">20</string>
+    <string name="multiplication">x</string>
+    <string name="foodWastageTitle">How much food waste have we saved?</string>
+    <string name="leaderboardTitle">IceGreen Leaderboard</string>
+    <string name="leaderboardRanking">1</string>
+    <integer name="leaderboardRanking">1</integer>
 </resources>

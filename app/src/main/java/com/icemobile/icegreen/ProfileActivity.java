@@ -17,4 +17,9 @@ public class ProfileActivity extends AppCompatActivity {
         Intent myIntent = new Intent(ProfileActivity.this, LoginActivity.class);
         startActivity(myIntent);
     }
+
+    public void goToLeaderboard(View view) {
+        Intent myIntent = new Intent(ProfileActivity.this, LeaderboardActivity.class);
+        startActivity(myIntent);
+    }
 }
