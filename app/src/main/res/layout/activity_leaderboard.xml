@@ -61,7 +61,7 @@
             android:layout_below="@+id/Current_User_Plant"
             android:gravity="center"
             android:paddingTop="10dp"
-            android:paddingBottom="20dp">
+            android:paddingBottom="5dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
             android:paddingTop="10dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:paddingBottom="20dp"
+            android:paddingBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -112,7 +112,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/foodWastageTitle"/>
+                android:text="@string/foodWastageTitle"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:text="21.4 kg"
+                android:gravity="center"/>
         </LinearLayout>
         <TextView
             android:id="@+id/leaderboard_title"
@@ -131,11 +138,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/leaderboard_recycler"
+                    android:id="@+id/recycler_view"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:scrollbars="vertical">
-
                 </android.support.v7.widget.RecyclerView>
             </ScrollView>
         </RelativeLayout>
