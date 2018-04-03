@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@drawable/leaves_background">
+    android:background="@color/colorPrimary">
 
     <RelativeLayout
         android:layout_width="match_parent"
