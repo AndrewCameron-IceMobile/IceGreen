@@ -11,6 +11,7 @@
     <string name="Next">Next</string>
     <string name="CollectSlogan">Collect 20 Leaves and\n get rewarded with\n your own plant.</string>
     <string name="whatsYourName">"What's your name?"</string>
+    <string name="enterName">Please Enter Your Name Here</string>
     <string name="LoginHiHeading">/ Hi </string>
     <string name="Username">[Name Space]</string>
     <string name="workAtIce">We see you are working at Ice, so we pre-filled your lunch schedule for you.</string>
@@ -24,4 +25,5 @@
     <string name="leaderboardTitle">IceGreen Leaderboard</string>
     <string name="leaderboardRanking">1</string>
     <string name="kiloSaved">019.4 kg</string>
+    <string name="confirmation">Are You Sure These Dates Are Correct?</string>
 </resources>

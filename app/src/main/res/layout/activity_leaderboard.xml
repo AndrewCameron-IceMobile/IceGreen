@@ -60,8 +60,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/Current_User_Plant"
             android:gravity="center"
-            android:paddingTop="10dp"
-            android:paddingBottom="5dp">
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -77,13 +77,6 @@
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="@string/multiplication"-->
-                <!--android:textColor="@color/white"-->
-                <!--android:textSize="15dp"-->
-                <!--android:textStyle="bold"/>-->
             <FrameLayout
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -106,31 +99,38 @@
             android:paddingRight="15dp"
             android:paddingBottom="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:orientation="vertical"
-            android:background="@color/white">
+            android:background="@drawable/text_container_white">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/foodWastageTitle"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:paddingBottom="5dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textStyle="bold"
                 android:text="21.4 kg"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:background="@drawable/kilo_saved_background"
+                android:textColor="@color/white"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"/>
         </LinearLayout>
         <TextView
             android:id="@+id/leaderboard_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:paddingTop="15dp"
             android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:text="@string/leaderboardTitle"
-            android:textSize="14dp"
-            android:textColor="@color/white"/>
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
