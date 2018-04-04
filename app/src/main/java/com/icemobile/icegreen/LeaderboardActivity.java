@@ -44,8 +44,6 @@ public class LeaderboardActivity extends AppCompatActivity {
 
         mRecyclerView.setAdapter(mAdapter);
 
-        mRecyclerView.setAdapter(mAdapter);
-
 //        mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
 //            @Override
 //            public void onClick(View view, int position) {
