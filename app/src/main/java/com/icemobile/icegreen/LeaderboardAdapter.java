@@ -27,8 +27,8 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
         }
     }
 
-    public LeaderboardAdapter(List<LeaderboardProfile> mLeaderboardProfileList) {
-        this.mLeaderboardProfileList = mLeaderboardProfileList;
+    public LeaderboardAdapter(List<LeaderboardProfile> leaderboardProfileList) {
+        mLeaderboardProfileList = leaderboardProfileList;
     }
 
     @Override
