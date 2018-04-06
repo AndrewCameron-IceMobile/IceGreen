@@ -1,5 +1,8 @@
 package com.icemobile.icegreen;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Movie;
 import android.support.v7.app.AppCompatActivity;
@@ -17,76 +20,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LeaderboardActivity extends AppCompatActivity {
-    private List<LeaderboardProfile> mLeaderboardProfileList = new ArrayList<>();
-    private RecyclerView mRecyclerView;
-    private LeaderboardAdapter mAdapter;
+
+    private static final String LEADERBOARD_FRAGMENT_TAG = "LEADERBOARD_FRAGMENT_TAG";
+    public static final String ARG_EXTRA_BUNDLE = "ARG_EXTRA_BUNDLE";
+
+    //Previous Variables
+//    private List<LeaderboardProfile> mLeaderboardProfileList = new ArrayList<>();
+//    private RecyclerView mRecyclerView;
+//    private LeaderboardAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(0,0);
         setContentView(R.layout.activity_leaderboard);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
-        mAdapter = new LeaderboardAdapter(mLeaderboardProfileList);
-
-        mRecyclerView.setHasFixedSize(true);
-
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
-        mRecyclerView.setAdapter(mAdapter);
-
-//        mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
-//            @Override
-//            public void onClick(View view, int position) {
-//                LeaderboardProfile leaderboardProfile = mLeaderboardProfileList.get(position);
-//                Toast.makeText(getApplicationContext(), leaderboardProfile.getUsername() + get)
-//            }
-//
-//            @Override
-//            public void onLongClick(View view, int position) {
-//
-//            }
-//        }));
-        prepareLeaderboardProfileData();
+        if (savedInstanceState == null && !isFragmentShown()){
+            showFragment();
+        }
     }
 
-    private void prepareLeaderboardProfileData() {
-        LeaderboardProfile leaderboardProfile = new LeaderboardProfile("Test Name", "32", "1");
-        mLeaderboardProfileList.add(leaderboardProfile);
+    private void showFragment(){
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        LeaderboardFragment fragment = LeaderboardFragment.newInstance(getIntent().getBundleExtra(ARG_EXTRA_BUNDLE));
 
-        leaderboardProfile = new LeaderboardProfile("Jonny B", "12", "2");
-        mLeaderboardProfileList.add(leaderboardProfile);
-
-        leaderboardProfile = new LeaderboardProfile("RP McMurphy", "2", "3");
-        mLeaderboardProfileList.add(leaderboardProfile);
-
-        leaderboardProfile = new LeaderboardProfile("Will Hunting", "63", "4");
-        mLeaderboardProfileList.add(leaderboardProfile);
-
-        leaderboardProfile = new LeaderboardProfile("Ray Liotta", "40", "5");
-        mLeaderboardProfileList.add(leaderboardProfile);
-
-        leaderboardProfile = new LeaderboardProfile("Test Name 2", "5", "6");
-        mLeaderboardProfileList.add(leaderboardProfile);
-
-        leaderboardProfile = new LeaderboardProfile("Test Name 2", "17", "7");
-        mLeaderboardProfileList.add(leaderboardProfile);
-
-        leaderboardProfile = new LeaderboardProfile("test test test test test test test ", "12", "8");
-        mLeaderboardProfileList.add(leaderboardProfile);
+        ft.replace(R.id.fragment_container, fragment, LEADERBOARD_FRAGMENT_TAG);
+        ft.commit();
     }
 
-    public void returnToProfile(View view) {
-        Intent myIntent = new Intent(LeaderboardActivity.this, ProfileActivity.class);
-        startActivity(myIntent);
+    private boolean isFragmentShown(){
+        FragmentManager fm = getFragmentManager();
+        Fragment fragment = fm.findFragmentByTag(LEADERBOARD_FRAGMENT_TAG);
+
+        return fragment != null;
     }
+
 }

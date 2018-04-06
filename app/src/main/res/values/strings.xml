@@ -26,4 +26,5 @@
     <string name="leaderboardRanking">1</string>
     <string name="kiloSaved">019.4 kg</string>
     <string name="confirmation">Are You Sure These Dates Are Correct?</string>
+    <string name="login">LOGIN</string>
 </resources>
