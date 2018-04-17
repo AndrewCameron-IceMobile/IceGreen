@@ -9,14 +9,21 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by andrew.cameron on 05/04/2018.
@@ -29,6 +36,7 @@ public class LeaderboardFragment extends Fragment {
     private List<LeaderboardProfile> mLeaderboardProfileList = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private LeaderboardAdapter mAdapter;
+    private DatabaseReference mDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
@@ -67,6 +75,8 @@ public class LeaderboardFragment extends Fragment {
     }
 
     private void prepareLeaderboardProfileData() {
+
+        //------------------------------------------------------------------------------------------
         LeaderboardProfile leaderboardProfile = new LeaderboardProfile("Test Name", "32", "1");
         mLeaderboardProfileList.add(leaderboardProfile);
 
