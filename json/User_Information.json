@@ -9,37 +9,24 @@
         "team": "ICE",
         "profilePic": "http://today.brandloyaltyint.corp/cache/_8847/-640-640-gray.jpg"  
     },
-
     "profile2": {
-        "username": "andrew.cameron1@icemobile.com",
+        "username": "andrew.cameron@icemobile.com",
         "nameDetails": {
-            "firstName": "Andre",
-            "lastName": "Cameroni"
+            "firstName": "Andrew2",
+            "lastName": "Cameron2"
         },
-        "NumberOfLeaves": 8,
-        "team": "BL",
+        "NumberOfLeaves": 10,
+        "team": "ABN",
         "profilePic": "http://today.brandloyaltyint.corp/cache/_8847/-640-640-gray.jpg"  
     },
-
     "profile3": {
-        "username": "andrew.cameron2@icemobile.com",
+        "username": "andrew.cameron@icemobile.com",
         "nameDetails": {
-            "firstName": "Andrea",
-            "lastName": "Camera"
+            "firstName": "Andrew3",
+            "lastName": "Cameron3"
         },
         "NumberOfLeaves": 12,
-        "team": "ICE",
-        "profilePic": "http://today.brandloyaltyint.corp/cache/_8847/-640-640-gray.jpg"  
-    },
-
-    "profile4": {
-        "username": "andrew.cameron3@icemobile.com",
-        "nameDetails": {
-            "firstName": "Andy",
-            "lastName": "Cammy"
-        },
-        "NumberOfLeaves": 19,
-        "team": "ABN",
+        "team": "BL",
         "profilePic": "http://today.brandloyaltyint.corp/cache/_8847/-640-640-gray.jpg"  
     }
  }
