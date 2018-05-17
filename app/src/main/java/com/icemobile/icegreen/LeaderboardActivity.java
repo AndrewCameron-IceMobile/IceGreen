@@ -24,11 +24,6 @@ public class LeaderboardActivity extends AppCompatActivity {
     private static final String LEADERBOARD_FRAGMENT_TAG = "LEADERBOARD_FRAGMENT_TAG";
     public static final String ARG_EXTRA_BUNDLE = "ARG_EXTRA_BUNDLE";
 
-    //Previous Variables
-//    private List<LeaderboardProfile> mLeaderboardProfileList = new ArrayList<>();
-//    private RecyclerView mRecyclerView;
-//    private LeaderboardAdapter mAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
