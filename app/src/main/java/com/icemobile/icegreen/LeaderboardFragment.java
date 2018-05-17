@@ -2,6 +2,7 @@ package com.icemobile.icegreen;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,9 +17,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +41,7 @@ public class LeaderboardFragment extends Fragment {
     private List<LeaderboardProfile> mLeaderboardProfileList = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private LeaderboardAdapter mAdapter;
+    //--------------------------------------------------
     private DatabaseReference mDatabase;
 
     @Override
@@ -55,26 +61,94 @@ public class LeaderboardFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-
+        mRecyclerView = view.findViewById(R.id.recycler_view);
         mAdapter = new LeaderboardAdapter(mLeaderboardProfileList);
-
         mRecyclerView.setHasFixedSize(true);
-
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
-
         mRecyclerView.setLayoutManager(mLayoutManager);
-
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
-
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
         mRecyclerView.setAdapter(mAdapter);
-
         prepareLeaderboardProfileData();
+
+//        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+//
+//        mAdapter = new LeaderboardAdapter(mLeaderboardProfileList);
+//
+//        mRecyclerView.setHasFixedSize(true);
+//
+//        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+//
+//        mRecyclerView.setLayoutManager(mLayoutManager);
+//
+//        mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
+//
+//        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+//
+//        mRecyclerView.setAdapter(mAdapter);
+//
+//        prepareLeaderboardProfileData();
+
     }
 
     private void prepareLeaderboardProfileData() {
+
+        //-----------New-----------------
+        new GetDataFromFirebase().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+        // Read from database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("profile1");
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+//                 ArrayList<String> list = (ArrayList<String>) dataSnapshot.getValue();
+//                 mRecyclerView.setAdapter(new  LeaderboardAdapter(mLeaderboardProfileList));
+
+                for (DataSnapshot profileSnapshot: dataSnapshot.getChildren()) {
+                    //String numberOfLeaves = (String) profileSnapshot.child("NumberofLeaves").getValue();
+                    String firstName = (String) profileSnapshot.child("firstName").getValue();
+                    String secondName = (String) profileSnapshot.child("lastName").getValue();
+                    String username = (String) profileSnapshot.child("username").getValue();
+                    int numberOfLeaves = (int) profileSnapshot.child("numberOfLeaves").getValue();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("Failed to read value." + databaseError.toException());
+            }
+        });
+
+        ChildEventListener childEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        //-----------New-----------------
 
         //------------------------------------------------------------------------------------------
         LeaderboardProfile leaderboardProfile = new LeaderboardProfile("Test Name", "32", "1");
@@ -100,5 +174,25 @@ public class LeaderboardFragment extends Fragment {
 
         leaderboardProfile = new LeaderboardProfile("test test test test test test test ", "12", "8");
         mLeaderboardProfileList.add(leaderboardProfile);
+
+    }
+
+    //------------------------------------------------------------------------------------------
+    private class GetDataFromFirebase extends AsyncTask<Void,Void,Boolean> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+        }
     }
 }
