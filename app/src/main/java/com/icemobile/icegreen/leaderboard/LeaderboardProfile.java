@@ -1,4 +1,4 @@
-package com.icemobile.icegreen;
+package com.icemobile.icegreen.leaderboard;
 
 /**
  * Created by andrew.cameron on 27/03/2018.

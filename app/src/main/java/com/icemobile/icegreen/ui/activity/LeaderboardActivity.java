@@ -1,10 +1,13 @@
-package com.icemobile.icegreen;
+package com.icemobile.icegreen.ui.activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.icemobile.icegreen.ui.fragment.LeaderboardFragment;
+import com.icemobile.icegreen.R;
 
 public class LeaderboardActivity extends AppCompatActivity {
 

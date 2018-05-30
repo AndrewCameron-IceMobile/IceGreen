@@ -1,13 +1,14 @@
-package com.icemobile.icegreen;
+package com.icemobile.icegreen.ui.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.icemobile.icegreen.R;
 
 /**
  * Created by andrew.cameron on 05/04/2018.

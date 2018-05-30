@@ -1,4 +1,4 @@
-package com.icemobile.icegreen;
+package com.icemobile.icegreen.ui.activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -6,7 +6,9 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import com.icemobile.icegreen.ui.activity.LoginActivity;
+import com.icemobile.icegreen.ui.fragment.MainFragment;
+import com.icemobile.icegreen.R;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.OnNextClickListener {
 

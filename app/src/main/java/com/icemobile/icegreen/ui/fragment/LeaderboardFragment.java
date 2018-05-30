@@ -1,4 +1,4 @@
-package com.icemobile.icegreen;
+package com.icemobile.icegreen.ui.fragment;
 
 import android.app.Fragment;
 import android.os.AsyncTask;
@@ -17,6 +17,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.icemobile.icegreen.leaderboard.LeaderboardAdapter;
+import com.icemobile.icegreen.leaderboard.LeaderboardProfile;
+import com.icemobile.icegreen.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.icemobile.icegreen;
+package com.icemobile.icegreen.ui.activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -6,8 +6,10 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
+
+import com.icemobile.icegreen.R;
+//import com.icemobile.icegreen.ui.activity.ProfileActivity;
+import com.icemobile.icegreen.ui.fragment.LoginFragment;
 
 public class LoginActivity extends AppCompatActivity implements LoginFragment.OnLoginClickListener{
 

@@ -1,4 +1,4 @@
-package com.icemobile.icegreen;
+package com.icemobile.icegreen.leaderboard;
 
 /**
  * Created by andrew.cameron on 28/03/2018.
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.icemobile.icegreen.R;
 
 import java.util.List;
 
