@@ -1,4 +1,4 @@
-package com.icemobile.icegreen;
+package com.icemobile.icegreen.ui.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.icemobile.icegreen.R;
 
 /**
  * Created by andrew.cameron on 04/04/2018.
