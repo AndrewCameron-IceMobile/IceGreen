@@ -5,16 +5,18 @@ package com.icemobile.icegreen;
  */
 
 public class LeaderboardProfile {
-    private String username, numberOfLeaves, ranking;
+    private String username;
+    private  Long numberOfLeaves;
+    private int iD;
 
     public LeaderboardProfile() {
 
     }
 
-    public LeaderboardProfile(String username, String numberOfLeaves, String ranking) {
+    public LeaderboardProfile(int iD, String username, Long numberOfLeaves) {
         this.username = username;
         this.numberOfLeaves = numberOfLeaves;
-        this.ranking = ranking;
+        this.iD = iD;
     }
 
     public String getUsername() {
@@ -25,19 +27,15 @@ public class LeaderboardProfile {
         this.username = username;
     }
 
-    public String getNumberOfLeaves() {
+    public Long getNumberOfLeaves() {
         return numberOfLeaves;
     }
 
-    public void setNumberOfLeaves(String numberOfLeaves) {
+    public void setNumberOfLeaves(Long numberOfLeaves) {
         this.numberOfLeaves = numberOfLeaves;
     }
 
-    public String getRanking() {
-        return ranking;
-    }
-
-    public void setRanking(String ranking) {
-        this.ranking = ranking;
+    public int getiD() {
+        return iD;
     }
 }
