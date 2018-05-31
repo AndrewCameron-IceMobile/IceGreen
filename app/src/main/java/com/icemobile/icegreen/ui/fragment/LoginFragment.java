@@ -18,6 +18,7 @@ import com.icemobile.icegreen.R;
 public class LoginFragment extends Fragment {
 
     private OnLoginClickListener mOnLoginClickListener;
+    private OnSignupClickListener mOnSignupClickListener;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_login, parent, false);
@@ -35,8 +36,16 @@ public class LoginFragment extends Fragment {
         void OnLoginClicked();
     }
 
+    public interface OnSignupClickListener {
+        void OnSignupClicked();
+    }
+
     public void setOnLoginClickListener(OnLoginClickListener onLoginClickListener) {
         mOnLoginClickListener = onLoginClickListener;
+    }
+
+    public void setOnSignupClickListener(OnSignupClickListener onSignupClickListener) {
+        mOnSignupClickListener = onSignupClickListener;
     }
 
     @Override
@@ -58,5 +67,15 @@ public class LoginFragment extends Fragment {
                 mOnLoginClickListener.OnLoginClicked();
             }
         });
+
+        Button buttonSignup = view.findViewById(R.id.button_go_to_signup);
+        buttonSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnSignupClickListener.OnSignupClicked();
+            }
+        });
     }
+
+
 }
