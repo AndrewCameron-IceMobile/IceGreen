@@ -11,7 +11,7 @@ import com.icemobile.icegreen.R;
 //import com.icemobile.icegreen.ui.activity.ProfileActivity;
 import com.icemobile.icegreen.ui.fragment.LoginFragment;
 
-public class LoginActivity extends AppCompatActivity implements LoginFragment.OnLoginClickListener{
+public class LoginActivity extends AppCompatActivity implements LoginFragment.OnLoginClickListener, LoginFragment.OnSignupClickListener{
 
     private static final String LOGIN_FRAGMENT_TAG = "LOGIN_FRAGMENT_TAG";
     public static final String ARG_EXTRA_BUNDLE = "ARG_EXTRA_BUNDLE";
@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
         FragmentTransaction ft = fm.beginTransaction();
         LoginFragment fragment = LoginFragment.newInstance(getIntent().getBundleExtra(ARG_EXTRA_BUNDLE));
         fragment.setOnLoginClickListener(this);
+        fragment.setOnSignupClickListener(this);
 
         ft.replace(R.id.fragment_container, fragment, LOGIN_FRAGMENT_TAG);
         ft.commit();
@@ -47,6 +48,12 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
     @Override
     public void OnLoginClicked() {
         Intent myIntent = new Intent(LoginActivity.this, ProfileActivity.class);
+        startActivity(myIntent);
+    }
+
+    @Override
+    public void OnSignupClicked() {
+        Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(myIntent);
     }
 }

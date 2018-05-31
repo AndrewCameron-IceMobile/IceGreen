@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.ProfileActivity" />
-        <activity android:name=".ui.activity.LeaderboardActivity"></activity>
+        <activity android:name=".ui.activity.LeaderboardActivity"/>
+        <activity android:name=".ui.activity.SignUpActivity" />
     </application>
 
 </manifest>
