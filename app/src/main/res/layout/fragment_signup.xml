@@ -37,10 +37,17 @@
                     android:textSize="20dp"
                     android:paddingLeft="10dp"/>
                 <EditText
+                    android:id="@+id/email_input"
                     android:paddingLeft="15dp"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/text_container_outline"/>
+                    android:background="@drawable/text_container_outline"
+                    android:singleLine="true"
+                    android:hint="email@icemobile.com"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:imeOptions="actionNext"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -55,10 +62,17 @@
                     android:textSize="20dp"
                     android:paddingLeft="10dp"/>
                 <EditText
+                    android:id="@+id/first_name_input"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:background="@drawable/text_container_outline"
-                    android:paddingLeft="10dp"/>
+                    android:paddingLeft="10dp"
+                    android:imeOptions="actionNext"
+                    android:hint="Your First Name"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:singleLine="true"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -73,10 +87,17 @@
                     android:textSize="20dp"
                     android:paddingLeft="10dp"/>
                 <EditText
+                    android:id="@+id/last_name_input"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:background="@drawable/text_container_outline"
-                    android:paddingLeft="10dp"/>
+                    android:paddingLeft="10dp"
+                    android:imeOptions="actionDone"
+                    android:hint="Your Last name"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:singleLine="true"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
