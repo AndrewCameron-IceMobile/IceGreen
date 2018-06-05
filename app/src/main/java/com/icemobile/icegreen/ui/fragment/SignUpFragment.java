@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.icemobile.icegreen.R;
 
@@ -64,6 +65,30 @@ public class SignUpFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 mOnConfirmSignUpClickListener.onConfirmSignUpClicked();
+            }
+        });
+
+        final EditText email = (EditText) view.findViewById(R.id.email_input);
+        email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                email.getText().clear();
+            }
+        });
+
+        final EditText firstName = (EditText) view.findViewById(R.id.first_name_input);
+        firstName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firstName.getText().clear();
+            }
+        });
+
+        final EditText lastName = (EditText) view.findViewById(R.id.last_name_input);
+        lastName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lastName.getText().clear();
             }
         });
     }

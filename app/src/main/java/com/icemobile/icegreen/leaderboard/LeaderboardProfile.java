@@ -13,10 +13,10 @@ public class LeaderboardProfile {
 
     }
 
-    public LeaderboardProfile(int iD, String username, Long numberOfLeaves) {
+    public LeaderboardProfile(String username, Long numberOfLeaves) {
         this.username = username;
         this.numberOfLeaves = numberOfLeaves;
-        this.iD = iD;
+//        this.iD = iD;
     }
 
     public String getUsername() {
@@ -35,7 +35,7 @@ public class LeaderboardProfile {
         this.numberOfLeaves = numberOfLeaves;
     }
 
-    public int getiD() {
-        return iD;
-    }
+//    public int getiD() {
+//        return iD;
+//    }
 }

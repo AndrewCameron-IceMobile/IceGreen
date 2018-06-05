@@ -5,9 +5,15 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.EditText;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.icemobile.icegreen.R;
+import com.icemobile.icegreen.leaderboard.LeaderboardProfile;
 import com.icemobile.icegreen.ui.fragment.MainFragment;
 import com.icemobile.icegreen.ui.fragment.SignUpFragment;
 
@@ -58,6 +64,25 @@ public class SignUpActivity extends AppCompatActivity implements SignUpFragment.
 
     @Override
     public void onConfirmSignUpClicked() {
+// Read from database
+        EditText email = (EditText) findViewById(R.id.email_input);
+        String username = email.getText().toString();
+        long leaves = 0;
+//        int id = 4;
 
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = database.getReference("Profiles");
+//        LeaderboardProfile profile = new LeaderboardProfile(id, username, leaves);
+//        myRef.setValue(profile);
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("Profiles");
+
+//        DatabaseReference profilesRef = ref.child("Profiles");
+        DatabaseReference newProfileRef = ref.child(username);
+        newProfileRef.setValue(new LeaderboardProfile(username, leaves));
+
+        Intent myIntent = new Intent(SignUpActivity.this, LoginActivity.class);
+        startActivity(myIntent);
     }
 }

@@ -73,11 +73,11 @@ public class LeaderboardFragment extends Fragment {
                 mLeaderboardProfileList = new ArrayList<>();
 
                 for (DataSnapshot profileSnapshot: dataSnapshot.getChildren()) {
-                    String iD = (String) profileSnapshot.getKey();
+//                    String iD = (String) profileSnapshot.getKey();
                     String username = (String) profileSnapshot.child("username").getValue();
                     Long numberOfLeaves = (Long) profileSnapshot.child("numberOfLeaves").getValue();
 
-                    LeaderboardProfile leaderboardProfile = new LeaderboardProfile(Integer.parseInt(iD), username, numberOfLeaves);
+                    LeaderboardProfile leaderboardProfile = new LeaderboardProfile(username, numberOfLeaves);
                     mLeaderboardProfileList.add(leaderboardProfile);
                 }
                 mRecyclerView.setAdapter(new LeaderboardAdapter(mLeaderboardProfileList));
