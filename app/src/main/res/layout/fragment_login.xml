@@ -34,12 +34,6 @@
             android:baselineAlignBottom="@drawable/circle"
             android:src="@drawable/icegreen_logo" />
     </FrameLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </RelativeLayout>
     <TextView
         android:id="@+id/enterNameText"
         android:text="@string/whatsYourName"
@@ -53,8 +47,8 @@
         android:textSize="24dp"
         android:textColor="@color/white"/>
 
-    <EditText
-        android:id="@+id/text_users_name"
+    <AutoCompleteTextView
+        android:id="@+id/name_search"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignLeft="@+id/enterNameText"
@@ -64,12 +58,21 @@
         android:paddingLeft="5dp"
         android:paddingRight="10dp"
         android:paddingTop="7dp"
-        android:text="@string/enterName"
+        android:hint="@string/enterName"
         android:textColor="@color/lightGrey"
         android:textSize="18dp"
         android:layout_marginRight="30dp"
         android:singleLine="true"
-        android:imeOptions="actionDone"/>
+        android:imeOptions="actionDone">
+    </AutoCompleteTextView>
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/name_search"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp">
+    </Spinner>
 
     <RelativeLayout
         android:layout_width="match_parent"
