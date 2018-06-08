@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -37,6 +38,31 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
         if (savedInstanceState == null && !isFragmentShown()){
             showFragment();
         }
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("Profiles");
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                final List<String> profiles = new ArrayList<String>();
+
+                for (DataSnapshot profilesSnapshot: dataSnapshot.getChildren()) {
+                    String profileUsername = profilesSnapshot.child("username").getValue(String.class);
+                    profiles.add(profileUsername);
+                }
+
+                Spinner profileSpinner = (Spinner) findViewById(R.id.spinner);
+                ArrayAdapter<String> profilesAdapter = new ArrayAdapter<String>(LoginActivity.this, android.R.layout.simple_spinner_item, profiles);
+                profilesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                profileSpinner.setAdapter(profilesAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void showFragment(){
@@ -72,7 +98,8 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
 
     @Override
     public void OnFindUsernameClicked() {
-        final EditText usersName = (EditText) findViewById(R.id.name_search);
+        final AutoCompleteTextView usersName = (AutoCompleteTextView) findViewById(R.id.name_search);
+        usersName.setThreshold(1);
         usersName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

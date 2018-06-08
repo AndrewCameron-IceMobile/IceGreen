@@ -63,7 +63,8 @@
         android:textSize="18dp"
         android:layout_marginRight="30dp"
         android:singleLine="true"
-        android:imeOptions="actionDone">
+        android:imeOptions="actionDone"
+        android:ems="10">
     </AutoCompleteTextView>
     <Spinner
         android:id="@+id/spinner"

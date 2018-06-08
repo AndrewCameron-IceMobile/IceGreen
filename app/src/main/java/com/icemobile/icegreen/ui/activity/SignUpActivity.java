@@ -76,7 +76,13 @@ public class SignUpActivity extends AppCompatActivity implements SignUpFragment.
 // Read from database
         EditText email = (EditText) findViewById(R.id.email_input);
         String username = email.getText().toString();
-        long leaves = 0;
+
+        EditText firstNameInput = (EditText) findViewById(R.id.first_name_input);
+        String firstName = firstNameInput.getText().toString();
+        EditText lastNameInput = (EditText) findViewById(R.id.last_name_input);
+        String lastName = lastNameInput.getText().toString();
+
+        long leaves = 0, monPresent = 0, tuePresent = 0, wedPresent = 0, thuPresent = 0, friPresent = 0;
 //        int id = 4;
 
 //        FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -87,9 +93,8 @@ public class SignUpActivity extends AppCompatActivity implements SignUpFragment.
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("Profiles");
 
-//        DatabaseReference profilesRef = ref.child("Profiles");
         DatabaseReference newProfileRef = ref.child(username);
-        newProfileRef.setValue(new LeaderboardProfile(username, leaves));
+        newProfileRef.setValue(new LeaderboardProfile(username, leaves, firstName, lastName, monPresent, tuePresent, wedPresent, thuPresent, friPresent));
 
         Intent myIntent = new Intent(SignUpActivity.this, LoginActivity.class);
         startActivity(myIntent);
