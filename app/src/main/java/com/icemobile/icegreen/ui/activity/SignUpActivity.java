@@ -7,15 +7,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.icemobile.icegreen.R;
 import com.icemobile.icegreen.leaderboard.LeaderboardProfile;
 import com.icemobile.icegreen.ui.fragment.MainFragment;
 import com.icemobile.icegreen.ui.fragment.SignUpFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by andrew.cameron on 30/05/2018.
@@ -67,7 +76,13 @@ public class SignUpActivity extends AppCompatActivity implements SignUpFragment.
 // Read from database
         EditText email = (EditText) findViewById(R.id.email_input);
         String username = email.getText().toString();
-        long leaves = 0;
+
+        EditText firstNameInput = (EditText) findViewById(R.id.first_name_input);
+        String firstName = firstNameInput.getText().toString();
+        EditText lastNameInput = (EditText) findViewById(R.id.last_name_input);
+        String lastName = lastNameInput.getText().toString();
+
+        long leaves = 0, monPresent = 0, tuePresent = 0, wedPresent = 0, thuPresent = 0, friPresent = 0;
 //        int id = 4;
 
 //        FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -78,9 +93,8 @@ public class SignUpActivity extends AppCompatActivity implements SignUpFragment.
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("Profiles");
 
-//        DatabaseReference profilesRef = ref.child("Profiles");
         DatabaseReference newProfileRef = ref.child(username);
-        newProfileRef.setValue(new LeaderboardProfile(username, leaves));
+        newProfileRef.setValue(new LeaderboardProfile(username, leaves, firstName, lastName, monPresent, tuePresent, wedPresent, thuPresent, friPresent));
 
         Intent myIntent = new Intent(SignUpActivity.this, LoginActivity.class);
         startActivity(myIntent);
