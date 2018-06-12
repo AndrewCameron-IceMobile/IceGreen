@@ -9,11 +9,6 @@ public class LeaderboardProfile {
     private  Long numberOfLeaves;
     private Long monPresent, tuePresent, wedPresent, thuPresent, friPresent;
 
-
-    public LeaderboardProfile() {
-
-    }
-
     public LeaderboardProfile(String username, Long numberOfLeaves, String firstName, String lastName, Long monPresent, Long tuePresent, Long wedPresent, Long thuPresent, Long friPresent) {
         this.username = username;
         this.numberOfLeaves = numberOfLeaves;
