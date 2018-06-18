@@ -68,28 +68,28 @@ public class SignUpFragment extends Fragment{
             }
         });
 
-        final EditText email = (EditText) view.findViewById(R.id.email_input);
-        email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                email.getText().clear();
-            }
-        });
+//        final EditText email = (EditText) view.findViewById(R.id.email_input);
+//        email.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                email.getText().clear();
+//            }
+//        });
+//
+//        final EditText password = (EditText) view.findViewById(R.id.password_input);
+//        password.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                password.getText().clear();
+//            }
+//        });
 
-        final EditText firstName = (EditText) view.findViewById(R.id.first_name_input);
-        firstName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                firstName.getText().clear();
-            }
-        });
-
-        final EditText lastName = (EditText) view.findViewById(R.id.last_name_input);
-        lastName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                lastName.getText().clear();
-            }
-        });
+//        final EditText name = (EditText) view.findViewById(R.id.name_input);
+//        name.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                name.getText().clear();
+//            }
+//        });
     }
 }

@@ -5,15 +5,15 @@ package com.icemobile.icegreen.leaderboard;
  */
 
 public class LeaderboardProfile {
-    private String username, firstName, lastName;
+    private String username, password, name;
     private  Long numberOfLeaves;
     private Long monPresent, tuePresent, wedPresent, thuPresent, friPresent;
 
-    public LeaderboardProfile(String username, Long numberOfLeaves, String firstName, String lastName, Long monPresent, Long tuePresent, Long wedPresent, Long thuPresent, Long friPresent) {
+    public LeaderboardProfile(String username, Long numberOfLeaves, String password, String name, Long monPresent, Long tuePresent, Long wedPresent, Long thuPresent, Long friPresent) {
         this.username = username;
         this.numberOfLeaves = numberOfLeaves;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.password = password;
+        this.name = name;
         this.monPresent = monPresent;
         this.tuePresent = tuePresent;
         this.wedPresent = wedPresent;
@@ -38,19 +38,19 @@ public class LeaderboardProfile {
     }
 
     public String getFirstName() {
-        return firstName;
+        return password;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.password = password;
     }
 
     public String getLastName() {
-        return lastName;
+        return name;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.name = lastName;
     }
 
     public Long getMonPresent() {

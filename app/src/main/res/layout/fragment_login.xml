@@ -74,6 +74,20 @@
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp">
     </Spinner>
+    <EditText
+        android:id="@+id/username_input_login"
+        android:layout_below="@id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_box"
+        android:hint="Username"/>
+    <EditText
+        android:id="@+id/password_input_login"
+        android:layout_below="@id/username_input_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_box"
+        android:hint="Password"/>
 
     <RelativeLayout
         android:layout_width="match_parent"

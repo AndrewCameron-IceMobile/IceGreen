@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.icemobile.icegreen">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ig_logo_launcher_round"
@@ -20,6 +21,7 @@
         <activity android:name=".ui.activity.ProfileActivity" />
         <activity android:name=".ui.activity.LeaderboardActivity"/>
         <activity android:name=".ui.activity.SignUpActivity" />
+        <activity android:name=".ui.activity.SignUpUserActivity"/>
     </application>
 
 </manifest>
