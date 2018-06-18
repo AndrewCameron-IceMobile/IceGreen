@@ -31,6 +31,8 @@ public class LoginFragment extends Fragment {
     private OnLoginClickListener mOnLoginClickListener;
     private OnSignupClickListener mOnSignupClickListener;
     private OnFindUsernameClickListener mOnFindUsernameClickListener;
+    private EditText emailInput;
+    private EditText passwordInput;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_login, parent, false);
@@ -49,7 +51,7 @@ public class LoginFragment extends Fragment {
     }
 
     public interface OnLoginClickListener {
-        void OnLoginClicked();
+        void OnLoginClicked(String email, String password);
     }
 
     public interface OnSignupClickListener {
@@ -72,19 +74,22 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        AutoCompleteTextView userName = (AutoCompleteTextView) view.findViewById(R.id.name_search);
-        userName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mOnFindUsernameClickListener.OnFindUsernameClicked();
-            }
-        });
+        emailInput = view.findViewById(R.id.username_input_login);
+        passwordInput = view.findViewById(R.id.password_input_login);
+
+//        AutoCompleteTextView userName = (AutoCompleteTextView) view.findViewById(R.id.name_search);
+//        userName.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mOnFindUsernameClickListener.OnFindUsernameClicked();
+//            }
+//        });
 
         Button buttonLogin = (Button) view.findViewById(R.id.button_go_to_profile);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mOnLoginClickListener.OnLoginClicked();
+                mOnLoginClickListener.OnLoginClicked(emailInput.getText().toString(), passwordInput.getText().toString());
             }
         });
 
@@ -96,6 +101,4 @@ public class LoginFragment extends Fragment {
             }
         });
     }
-
-
 }

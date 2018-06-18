@@ -39,8 +39,6 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
     public static final String ARG_EXTRA_BUNDLE = "ARG_EXTRA_BUNDLE";
     private static final String TAG = "LOGIN";
 
-    private EditText emailInput;
-    private EditText passwordInput;
     private FirebaseAuth mAuth;
 
     @Override
@@ -50,9 +48,6 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
 
-        emailInput = findViewById(R.id.username_input_login);
-        passwordInput = findViewById(R.id.password_input_login);
-
         if (savedInstanceState == null && !isFragmentShown()){
             showFragment();
         }
@@ -60,27 +55,27 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("Profiles");
 
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                final List<String> profiles = new ArrayList<String>();
-
-                for (DataSnapshot profilesSnapshot: dataSnapshot.getChildren()) {
-                    String profileUsername = profilesSnapshot.child("username").getValue(String.class);
-                    profiles.add(profileUsername);
-                }
-
-                Spinner profileSpinner = (Spinner) findViewById(R.id.spinner);
-                ArrayAdapter<String> profilesAdapter = new ArrayAdapter<String>(LoginActivity.this, android.R.layout.simple_spinner_item, profiles);
-                profilesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                profileSpinner.setAdapter(profilesAdapter);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+//        ref.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                final List<String> profiles = new ArrayList<String>();
+//
+//                for (DataSnapshot profilesSnapshot: dataSnapshot.getChildren()) {
+//                    String profileUsername = profilesSnapshot.child("username").getValue(String.class);
+//                    profiles.add(profileUsername);
+//                }
+//
+//                Spinner profileSpinner = (Spinner) findViewById(R.id.spinner);
+//                ArrayAdapter<String> profilesAdapter = new ArrayAdapter<String>(LoginActivity.this, android.R.layout.simple_spinner_item, profiles);
+//                profilesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                profileSpinner.setAdapter(profilesAdapter);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     @Override
@@ -114,8 +109,8 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
     }
 
     @Override
-    public void OnLoginClicked() {
-        mAuth.signInWithEmailAndPassword(emailInput.getText().toString(), passwordInput.getText().toString())
+    public void OnLoginClicked(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

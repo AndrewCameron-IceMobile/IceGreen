@@ -20,8 +20,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="75dp"
-            android:paddingTop="95dp"
-            android:weightSum="3"
+            android:paddingTop="75dp"
+            android:weightSum="4"
             android:orientation="vertical"
             android:gravity="center_horizontal">
             <LinearLayout
@@ -82,22 +82,47 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name"
+                    android:text="First Name"
                     android:textStyle="bold"
                     android:textSize="20dp"
                     android:paddingLeft="10dp"/>
-                <!--<EditText-->
-                    <!--android:id="@+id/name_input"-->
-                    <!--android:layout_width="300dp"-->
-                    <!--android:layout_height="50dp"-->
-                    <!--android:background="@drawable/text_container_outline"-->
-                    <!--android:paddingLeft="10dp"-->
-                    <!--android:imeOptions="actionDone"-->
-                    <!--android:hint="Your name"-->
-                    <!--android:textColor="@color/lightGrey"-->
-                    <!--android:textSize="18dp"-->
-                    <!--android:textStyle="bold"-->
-                    <!--android:singleLine="true"/>-->
+                <EditText
+                    android:id="@+id/first_name_input"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/text_container_outline"
+                    android:paddingLeft="10dp"
+                    android:imeOptions="actionDone"
+                    android:hint="Your First Name"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:singleLine="true"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"/>
+                <EditText
+                    android:id="@+id/last_name_input"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/text_container_outline"
+                    android:paddingLeft="10dp"
+                    android:imeOptions="actionDone"
+                    android:hint="Your Last Name"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:singleLine="true"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
