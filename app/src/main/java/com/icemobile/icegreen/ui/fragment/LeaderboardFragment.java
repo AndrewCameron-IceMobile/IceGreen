@@ -76,15 +76,14 @@ public class LeaderboardFragment extends Fragment {
 //                    String iD = (String) profileSnapshot.getKey();
                     String username = (String) profileSnapshot.child("username").getValue();
                     Long numberOfLeaves = (Long) profileSnapshot.child("numberOfLeaves").getValue();
-                    String firstName = (String) profileSnapshot.child("firstName").getValue();
-                    String lastName = (String) profileSnapshot.child("lastName").getValue();
-                    Long monPresent = (Long) profileSnapshot.child("monPresent").getValue();
-                    Long tuePresent = (Long) profileSnapshot.child("tuePresent").getValue();
-                    Long wedPresent = (Long) profileSnapshot.child("wedPresent").getValue();
-                    Long thuPresent = (Long) profileSnapshot.child("thuPresent").getValue();
-                    Long friPresent = (Long) profileSnapshot.child("friPresent").getValue();
+                    String name = (String) profileSnapshot.child("name").getValue();
+                    Boolean monPresent = (Boolean) profileSnapshot.child("monPresent").getValue();
+                    Boolean tuePresent = (Boolean) profileSnapshot.child("tuePresent").getValue();
+                    Boolean wedPresent = (Boolean) profileSnapshot.child("wedPresent").getValue();
+                    Boolean thuPresent = (Boolean) profileSnapshot.child("thuPresent").getValue();
+                    Boolean friPresent = (Boolean) profileSnapshot.child("friPresent").getValue();
 
-                    LeaderboardProfile leaderboardProfile = new LeaderboardProfile(username, numberOfLeaves, firstName, lastName, monPresent, tuePresent, wedPresent, thuPresent, friPresent);
+                    LeaderboardProfile leaderboardProfile = new LeaderboardProfile(username, numberOfLeaves, name, monPresent, tuePresent, wedPresent, thuPresent, friPresent);
                     mLeaderboardProfileList.add(leaderboardProfile);
                 }
                 mRecyclerView.setAdapter(new LeaderboardAdapter(mLeaderboardProfileList));
