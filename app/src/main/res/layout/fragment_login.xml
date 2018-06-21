@@ -36,7 +36,7 @@
     </FrameLayout>
     <TextView
         android:id="@+id/enterNameText"
-        android:text="@string/whatsYourName"
+        android:text="Who Are You?"
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,33 +47,64 @@
         android:textSize="24dp"
         android:textColor="@color/white"/>
 
-    <AutoCompleteTextView
-        android:id="@+id/name_search"
+    <!--<AutoCompleteTextView-->
+        <!--android:id="@+id/name_search"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_alignLeft="@+id/enterNameText"-->
+        <!--android:layout_alignStart="@+id/enterNameText"-->
+        <!--android:layout_below="@+id/enterNameText"-->
+        <!--android:background="@drawable/text_box"-->
+        <!--android:paddingLeft="5dp"-->
+        <!--android:paddingRight="10dp"-->
+        <!--android:paddingTop="7dp"-->
+        <!--android:hint="@string/enterName"-->
+        <!--android:textColor="@color/lightGrey"-->
+        <!--android:textSize="18dp"-->
+        <!--android:layout_marginRight="30dp"-->
+        <!--android:singleLine="true"-->
+        <!--android:imeOptions="actionDone"-->
+        <!--android:ems="10">-->
+    <!--</AutoCompleteTextView>-->
+    <!--<Spinner-->
+        <!--android:id="@+id/spinner"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_below="@+id/name_search"-->
+        <!--android:layout_marginRight="30dp"-->
+        <!--android:layout_marginLeft="30dp">-->
+    <!--</Spinner>-->
+    <EditText
+        android:id="@+id/username_input_login"
+        android:layout_below="@id/enterNameText"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignLeft="@+id/enterNameText"
-        android:layout_alignStart="@+id/enterNameText"
-        android:layout_below="@+id/enterNameText"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
         android:background="@drawable/text_box"
+        android:hint="Username"
         android:paddingLeft="5dp"
         android:paddingRight="10dp"
-        android:paddingTop="7dp"
-        android:hint="@string/enterName"
-        android:textColor="@color/lightGrey"
-        android:textSize="18dp"
-        android:layout_marginRight="30dp"
+        android:paddingTop="10dp"
         android:singleLine="true"
-        android:imeOptions="actionDone"
-        android:ems="10">
-    </AutoCompleteTextView>
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_height="40dp"
+        android:imeOptions="actionNext"
+        android:layout_alignLeft="@id/enterNameText"
+        android:inputType="textEmailAddress"/>
+    <EditText
+        android:id="@+id/password_input_login"
+        android:layout_below="@id/username_input_login"
         android:layout_width="match_parent"
-        android:layout_below="@+id/name_search"
+        android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp">
-    </Spinner>
+        android:background="@drawable/text_box"
+        android:hint="Password"
+        android:imeOptions="actionDone"
+        android:paddingLeft="5dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@id/enterNameText"
+        android:inputType="textPassword"/>
 
     <RelativeLayout
         android:layout_width="match_parent"

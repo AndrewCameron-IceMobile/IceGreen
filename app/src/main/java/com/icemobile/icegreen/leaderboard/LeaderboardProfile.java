@@ -5,15 +5,14 @@ package com.icemobile.icegreen.leaderboard;
  */
 
 public class LeaderboardProfile {
-    private String username, firstName, lastName;
+    private String email, password, name;
     private  Long numberOfLeaves;
-    private Long monPresent, tuePresent, wedPresent, thuPresent, friPresent;
+    private Boolean monPresent, tuePresent, wedPresent, thuPresent, friPresent;
 
-    public LeaderboardProfile(String username, Long numberOfLeaves, String firstName, String lastName, Long monPresent, Long tuePresent, Long wedPresent, Long thuPresent, Long friPresent) {
-        this.username = username;
+    public LeaderboardProfile(String email, Long numberOfLeaves, String name, Boolean monPresent, Boolean tuePresent, Boolean wedPresent, Boolean thuPresent, Boolean friPresent) {
+        this.email = email;
         this.numberOfLeaves = numberOfLeaves;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.monPresent = monPresent;
         this.tuePresent = tuePresent;
         this.wedPresent = wedPresent;
@@ -22,11 +21,11 @@ public class LeaderboardProfile {
     }
 
     public String getUsername() {
-        return username;
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String email) {
+        this.email = email;
     }
 
     public Long getNumberOfLeaves() {
@@ -37,59 +36,51 @@ public class LeaderboardProfile {
         this.numberOfLeaves = numberOfLeaves;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String lastName) {
+        this.name = lastName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Long getMonPresent() {
+    public Boolean getMonPresent() {
         return monPresent;
     }
 
-    public void setMonPresent(Long monPresent) {
+    public void setMonPresent(Boolean monPresent) {
         this.monPresent = monPresent;
     }
 
-    public Long getTuePresent() {
+    public Boolean getTuePresent() {
         return tuePresent;
     }
 
-    public void setTuePresent(Long tuePresent) {
+    public void setTuePresent(Boolean tuePresent) {
         this.tuePresent = tuePresent;
     }
 
-    public Long getWedPresent() {
+    public Boolean getWedPresent() {
         return wedPresent;
     }
 
-    public void setWedPresent(Long wedPresent) {
+    public void setWedPresent(Boolean wedPresent) {
         this.wedPresent = wedPresent;
     }
 
-    public Long getThuPresent() {
+    public Boolean getThuPresent() {
         return thuPresent;
     }
 
-    public void setThuPresent(Long thuPresent) {
+    public void setThuPresent(Boolean thuPresent) {
         this.thuPresent = thuPresent;
     }
 
-    public Long getFriPresent() {
+    public Boolean getFriPresent() {
         return friPresent;
     }
 
-    public void setFriPresent(Long friPresent) {
+    public void setFriPresent(Boolean friPresent) {
         this.friPresent = friPresent;
     }
 

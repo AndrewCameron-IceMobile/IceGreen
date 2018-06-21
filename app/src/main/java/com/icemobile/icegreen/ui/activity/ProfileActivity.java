@@ -6,25 +6,45 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.icemobile.icegreen.ui.fragment.ProfileFragment;
 import com.icemobile.icegreen.R;
+
+import com.nex3z.togglebuttongroup.MultiSelectToggleGroup;
 
 public class ProfileActivity extends AppCompatActivity implements ProfileFragment.OnConfirmClickListener, ProfileFragment.OnReturnClickListener {
 
     private static final String PROFILE_FRAGMENT_TAG = "PROFILE_FRAGMENT_TAG";
     public static final String ARG_EXTRA_BUNDLE = "ARG_EXTRA_BUNDLE";
 
+    // Mulit Select TAG
+    private static final String LOG_TAG = ProfileFragment.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         overridePendingTransition(0,0);
         setContentView(R.layout.activity_profile);
+//        init();
 
         if (savedInstanceState == null && !isFragmentShown()){
             showFragment();
         }
     }
+
+//    private void init() {
+//        MultiSelectToggleGroup multi = (MultiSelectToggleGroup) findViewById(R.id.day_choices);
+//        multi.setOnCheckedChangeListener(new MultiSelectToggleGroup.OnCheckedStateChangeListener() {
+//            @Override
+//            public void onCheckedStateChanged(MultiSelectToggleGroup group, int checkedId, boolean isChecked) {
+//                Log.v(LOG_TAG, "onCheckedStateChanged(): group.getCheckedIds() = " + group.getCheckedIds());
+//            }
+//        });
+//    }
 
     private void showFragment() {
         FragmentManager fm = getFragmentManager();

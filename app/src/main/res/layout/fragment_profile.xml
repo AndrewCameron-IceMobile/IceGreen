@@ -46,7 +46,7 @@
                 android:textSize="30dp"
                 android:textColor="@color/white"/>
             <TextView
-                android:id="@+id/Username"
+                android:id="@+id/current_user_display"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Username"
@@ -89,6 +89,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:tag="monday"
                     android:text="Mon"/>
                 <com.nex3z.togglebuttongroup.button.CircularToggle
                     android:id="@+id/tuesday_toggle"
@@ -96,6 +97,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:tag="tuesday"
                     android:text="Tue"/>
                 <com.nex3z.togglebuttongroup.button.CircularToggle
                     android:id="@+id/wednesday_toggle"
@@ -105,6 +107,7 @@
                     android:layout_centerHorizontal="true"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:tag="wednesday"
                     android:text="Wed" />
                 <com.nex3z.togglebuttongroup.button.CircularToggle
                     android:id="@+id/thursday_toggle"
@@ -112,6 +115,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:tag="thursday"
                     android:text="Thu"/>
                 <com.nex3z.togglebuttongroup.button.CircularToggle
                     android:id="@+id/friday_toggle"
@@ -119,6 +123,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:tag="friday"
                     android:text="Fri"/>
 
             </com.nex3z.togglebuttongroup.MultiSelectToggleGroup>

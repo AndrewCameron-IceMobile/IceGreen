@@ -19,11 +19,11 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
     private List<LeaderboardProfile> mLeaderboardProfileList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView username, numberOfLeaves, ranking;
+        public TextView name, numberOfLeaves, ranking;
 
         public MyViewHolder(View view) {
             super(view);
-            username = (TextView) view.findViewById(R.id.name_space_card);
+            name = (TextView) view.findViewById(R.id.name_space_card);
             numberOfLeaves = (TextView) view.findViewById(R.id.user_total_leaves);
         }
     }
@@ -42,7 +42,7 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         LeaderboardProfile leaderboardProfileList = mLeaderboardProfileList.get(position);
-        holder.username.setText(leaderboardProfileList.getUsername());
+        holder.name.setText(leaderboardProfileList.getName());
         holder.numberOfLeaves.setText(leaderboardProfileList.getNumberOfLeaves().toString());
     }
 
