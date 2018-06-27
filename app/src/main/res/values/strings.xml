@@ -17,7 +17,7 @@
     <string name="workAtIce">We see you are working at Ice, so we pre-filled your lunch schedule for you.</string>
     <string name="workAtBL">We see you are working at BL, so we pre-filled your lunch schedule for you.</string>
     <string name="workAtABN">We see you are working at ABN, so we pre-filled your lunch schedule for you.</string>
-    <string name="LetMichKnow">Let Michiel know when you are <b>NOT</b> having lunch at ICE</string>
+    <string name="LetMichKnow">Let Michiel know when you <b>ARE</b> having lunch at ICE</string>
     <string name="plus">+ </string>
     <string name="currentLeavesNumber">20</string>
     <string name="multiplication">x</string>
