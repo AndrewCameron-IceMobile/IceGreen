@@ -19,12 +19,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.icemobile.icegreen.R;
 
+import com.icemobile.icegreen.dao.firebase.Day;
+import com.icemobile.icegreen.dao.firebase.impl.FirebaseDAOImpl;
 import com.nex3z.togglebuttongroup.MultiSelectToggleGroup;
 import com.nex3z.togglebuttongroup.button.CircularToggle;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by andrew.cameron on 05/04/2018.
@@ -82,6 +80,9 @@ public class ProfileFragment extends Fragment {
         if (user != null) {
             uID = user.getUid();
         }
+
+        FirebaseDAOImpl.getInstance().updateDay(Day.MONDAY, true);
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference("Profiles");
 
@@ -156,13 +157,15 @@ public class ProfileFragment extends Fragment {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference reference = database.getReference("Profiles");
 
+
                 //[BEGIN] Update Leaves
-                DatabaseReference updateLeaves = reference.child(uID);
-                DatabaseReference getCurrentLeaves = updateLeaves.child("numberOfLeaves");
-                getCurrentLeaves.addValueEventListener(new ValueEventListener() {
+                final DatabaseReference updateLeaves = reference.child(uID);
+                final DatabaseReference getCurrentLeaves = updateLeaves.child("numberOfLeaves");
+                getCurrentLeaves.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         currentLeaves = (Long) dataSnapshot.getValue();
+                        getCurrentLeaves.setValue(currentLeaves + 1);
                     }
 
                     @Override
@@ -171,8 +174,8 @@ public class ProfileFragment extends Fragment {
                     }
                 });
 
-                newLeaves = currentLeaves++;
-                updateLeaves.child("numberOfLeaves").setValue(newLeaves);
+//                newLeaves = currentLeaves++;
+
                 //[END] Update Leaves
 
                 mOnConfirmClickListener.onConfirmClicked();

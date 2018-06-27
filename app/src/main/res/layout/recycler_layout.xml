@@ -24,26 +24,30 @@
                 android:paddingTop="10dp"
                 android:src="@drawable/profile" />
 
-            <RelativeLayout
+            <LinearLayout
                 android:id="@+id/card_user_info"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@+id/card_profile_pic"
                 android:paddingLeft="15dp"
-                android:paddingRight="100dp">
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/name_space_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="15dp"
-                    android:text="@string/Username"
-                    android:textStyle="bold" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/name_space_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="15dp"
+                        android:text="@string/Username"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/name_space_card"
                     android:paddingBottom="5dp">
 
                     <TextView
@@ -76,7 +80,7 @@
                         </FrameLayout>
                     </RelativeLayout>
                 </RelativeLayout>
-            </RelativeLayout>
+            </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -86,7 +90,7 @@
                 android:paddingRight="30dp">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center">
 

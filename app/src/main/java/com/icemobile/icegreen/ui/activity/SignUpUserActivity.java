@@ -51,6 +51,15 @@ public class SignUpUserActivity extends AppCompatActivity{
                 signup_User(v);
             }
         });
+
+        final Button cancelButton = findViewById(R.id.cancel_button_signup);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SignUpUserActivity.this, LoginActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void signup_User(View v) {
