@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +33,7 @@ public class LeaderboardFragment extends Fragment {
 
     private List<LeaderboardProfile> mLeaderboardProfileList;
     private RecyclerView mRecyclerView;
+    private OnFinishedClickListener mOnFinishedClickListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
@@ -46,9 +48,26 @@ public class LeaderboardFragment extends Fragment {
         return fragment;
     }
 
+
+    public void setOnFinishedClickListener(OnFinishedClickListener onFinishedClickListener) {
+        mOnFinishedClickListener = onFinishedClickListener;
+    }
+
+    public interface OnFinishedClickListener {
+        void OnFinishedClicked();
+    }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Button buttonFinished = view.findViewById(R.id.btn_session_finished);
+        buttonFinished.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnFinishedClickListener.OnFinishedClicked();
+            }
+        });
 
         mRecyclerView = view.findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);

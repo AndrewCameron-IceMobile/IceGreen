@@ -30,7 +30,6 @@ public class LoginFragment extends Fragment {
 
     private OnLoginClickListener mOnLoginClickListener;
     private OnSignupClickListener mOnSignupClickListener;
-    private OnFindUsernameClickListener mOnFindUsernameClickListener;
     private EditText emailInput;
     private EditText passwordInput;
 
@@ -46,20 +45,12 @@ public class LoginFragment extends Fragment {
         return fragment;
     }
 
-    public interface OnFindUsernameClickListener {
-        void OnFindUsernameClicked();
-    }
-
     public interface OnLoginClickListener {
         void OnLoginClicked(String email, String password);
     }
 
     public interface OnSignupClickListener {
         void OnSignupClicked();
-    }
-
-    public void setOnFindUsernameClickListener(OnFindUsernameClickListener onFindUsernameClickListener) {
-        mOnFindUsernameClickListener = onFindUsernameClickListener;
     }
 
     public void setOnLoginClickListener(OnLoginClickListener onLoginClickListener) {
@@ -76,14 +67,6 @@ public class LoginFragment extends Fragment {
 
         emailInput = view.findViewById(R.id.username_input_login);
         passwordInput = view.findViewById(R.id.password_input_login);
-
-//        AutoCompleteTextView userName = (AutoCompleteTextView) view.findViewById(R.id.name_search);
-//        userName.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mOnFindUsernameClickListener.OnFindUsernameClicked();
-//            }
-//        });
 
         Button buttonLogin = (Button) view.findViewById(R.id.button_go_to_profile);
         buttonLogin.setOnClickListener(new View.OnClickListener() {

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     android:gravity="center_horizontal"
-    android:background="@color/colorPrimary">
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/ButtonDIstanceFromBottom">
+        android:layout_marginBottom="@dimen/ButtonDIstanceFromBottom"
+        android:gravity="center_horizontal">
+
         <FrameLayout
             android:id="@+id/main_logo_home"
             android:layout_width="match_parent"
@@ -20,6 +22,7 @@
             android:layout_alignParentTop="true"
             android:foregroundGravity="center_horizontal"
             android:paddingTop="50dp">
+
             <ImageView
                 android:id="@+id/homeCircle"
                 android:layout_width="match_parent"
@@ -36,91 +39,99 @@
                 android:baselineAlignBottom="@drawable/circle"
                 android:src="@drawable/icegreen_logo" />
         </FrameLayout>
+
         <TextView
             android:id="@+id/Title1"
-            android:paddingTop="35dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/main_logo_home"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingTop="35dp"
             android:text="@string/TitleOneOnboarding"
-            android:textSize="28dp"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="28dp" />
+
         <TextView
             android:id="@+id/Context1Onboarding"
-            android:text="@string/TextOneOnBoarding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/Title1"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:textSize="16dp"
+            android:text="@string/TextOneOnBoarding"
             android:textColor="@color/white"
-            />
+            android:textSize="16dp" />
+
         <TextView
             android:id="@+id/Title2"
-            android:layout_below="@+id/Context1Onboarding"
-            android:text="@string/TitleTwoOnboarding"
-            android:paddingTop="35dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="28dp"
-            android:textColor="@color/white" />
+            android:layout_below="@+id/Context1Onboarding"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingTop="35dp"
+            android:text="@string/TitleTwoOnboarding"
+            android:textColor="@color/white"
+            android:textSize="28dp" />
+
         <TextView
             android:id="@+id/Context2Onboarding"
-            android:layout_below="@id/Title2"
-            android:text="@string/TextTwoOnBoarding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/Title2"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:textSize="16dp"
-            android:textColor="@color/white"/>
+            android:text="@string/TextTwoOnBoarding"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
         <TextView
             android:id="@+id/Title3"
-            android:layout_below="@+id/Context2Onboarding"
-            android:text="@string/TitleThreeOnboarding"
-            android:paddingTop="35dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="28dp"
-            android:textColor="@color/white" />
+            android:layout_below="@+id/Context2Onboarding"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingTop="35dp"
+            android:text="@string/TitleThreeOnboarding"
+            android:textColor="@color/white"
+            android:textSize="28dp" />
+
         <TextView
             android:id="@+id/Context3Onboarding"
-            android:layout_below="@id/Title3"
-            android:text="@string/TextThreeOnBoarding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/Title3"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:textSize="16dp"
-            android:textColor="@color/white" />
+            android:text="@string/TextThreeOnBoarding"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
         <TextView
             android:id="@+id/Title4"
-            android:layout_below="@+id/Context3Onboarding"
-            android:text="@string/TitleFourOnboarding"
-            android:paddingTop="35dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="28dp"
-            android:textColor="@color/white" />
+            android:layout_below="@+id/Context3Onboarding"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingTop="35dp"
+            android:text="@string/TitleFourOnboarding"
+            android:textColor="@color/white"
+            android:textSize="28dp" />
+
         <TextView
             android:id="@+id/Context4Onboarding"
-            android:layout_below="@id/Title4"
-            android:text="@string/TextFourOnBoarding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/Title4"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:textSize="16dp"
-            android:textColor="@color/white" />
+            android:text="@string/TextFourOnBoarding"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
         <TextView
             android:id="@+id/collectSloganOnBoarding"
             android:layout_width="match_parent"
@@ -128,23 +139,27 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/Context4Onboarding"
+            android:layout_marginBottom="30dp"
             android:gravity="center"
             android:text="@string/CollectSlogan"
             android:textColor="@color/white"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
         <FrameLayout
-            android:layout_below="@+id/collectSloganOnBoarding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/collectSloganOnBoarding"
             android:layout_marginBottom="30dp">
+
             <Button
                 android:id="@+id/button_go_to_login"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Next"
-                android:background="@drawable/button"
                 android:layout_gravity="center_horizontal"
-                style="?android:attr/borderlessButtonStyle" />
+                android:background="@drawable/button"
+                android:text="@string/Next" />
         </FrameLayout>
     </RelativeLayout>
 </ScrollView>

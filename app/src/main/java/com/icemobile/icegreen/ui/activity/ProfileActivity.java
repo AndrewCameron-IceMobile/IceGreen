@@ -36,16 +36,6 @@ public class ProfileActivity extends AppCompatActivity implements ProfileFragmen
         }
     }
 
-//    private void init() {
-//        MultiSelectToggleGroup multi = (MultiSelectToggleGroup) findViewById(R.id.day_choices);
-//        multi.setOnCheckedChangeListener(new MultiSelectToggleGroup.OnCheckedStateChangeListener() {
-//            @Override
-//            public void onCheckedStateChanged(MultiSelectToggleGroup group, int checkedId, boolean isChecked) {
-//                Log.v(LOG_TAG, "onCheckedStateChanged(): group.getCheckedIds() = " + group.getCheckedIds());
-//            }
-//        });
-//    }
-
     private void showFragment() {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();

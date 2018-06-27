@@ -18,12 +18,29 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="20dp"
-            android:gravity="right">
+            android:gravity="right"
+            android:weightSum="2">
             <ImageView
                 android:id="@+id/profile_pic"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:src="@drawable/profile" />
+                android:layout_height="match_parent"
+                android:src="@drawable/profile"
+                android:layout_weight="1"
+                android:paddingRight="70dp"
+                android:layout_marginRight="70dp"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:paddingRight="15dp">
+                <Button
+                    android:id="@+id/btn_session_finished"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button"
+                    android:text="FINISHED" />
+            </RelativeLayout>
         </LinearLayout>
         <RelativeLayout
             android:id="@+id/Current_User_Plant"
@@ -119,19 +136,20 @@
             android:paddingBottom="5dp"
             android:paddingLeft="15dp"
             android:text="@string/leaderboardTitle"
-            android:textSize="16dp"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:background="@color/colorPrimary"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ScrollView
+                android:id="@+id/recycler_scroll"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:scrollbars="vertical">
                 </android.support.v7.widget.RecyclerView>
             </ScrollView>

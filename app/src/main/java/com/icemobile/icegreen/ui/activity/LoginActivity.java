@@ -54,28 +54,6 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("Profiles");
-
-//        ref.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                final List<String> profiles = new ArrayList<String>();
-//
-//                for (DataSnapshot profilesSnapshot: dataSnapshot.getChildren()) {
-//                    String profileUsername = profilesSnapshot.child("username").getValue(String.class);
-//                    profiles.add(profileUsername);
-//                }
-//
-//                Spinner profileSpinner = (Spinner) findViewById(R.id.spinner);
-//                ArrayAdapter<String> profilesAdapter = new ArrayAdapter<String>(LoginActivity.this, android.R.layout.simple_spinner_item, profiles);
-//                profilesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                profileSpinner.setAdapter(profilesAdapter);
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
     }
 
     @Override
@@ -110,28 +88,29 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
 
     @Override
     public void OnLoginClicked(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
 
-                            Intent myIntent = new Intent(LoginActivity.this, ProfileActivity.class);
-                            startActivity(myIntent);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "signInWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                updateUI(user);
+
+                                Intent myIntent = new Intent(LoginActivity.this, ProfileActivity.class);
+                                startActivity(myIntent);
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                                updateUI(null);
+                            }
                         }
-                    }
-                });
-    }
+                    });
+        }
 
     @Override
     public void OnSignupClicked() {
@@ -139,38 +118,20 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
         startActivity(myIntent);
     }
 
-//    @Override
-//    public void OnFindUsernameClicked() {
-//        final AutoCompleteTextView usersName = (AutoCompleteTextView) findViewById(R.id.name_search);
-//        usersName.setThreshold(1);
-//        usersName.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                FirebaseDatabase database = FirebaseDatabase.getInstance();
-//                DatabaseReference ref = database.getReference("Profiles");
-//
-//                ref.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot dataSnapshot) {
-//                        final List<String> profiles = new ArrayList<String>();
-//
-//                        for (DataSnapshot profilesSnapshot: dataSnapshot.getChildren()) {
-//                            String profileUsername = profilesSnapshot.child("username").getValue(String.class);
-//                            profiles.add(profileUsername);
-//                        }
-//
-//                        Spinner profileSpinner = (Spinner) findViewById(R.id.spinner);
-//                        ArrayAdapter<String> profilesAdapter = new ArrayAdapter<String>(LoginActivity.this, android.R.layout.simple_spinner_item, profiles);
-//                        profilesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//                        profileSpinner.setAdapter(profilesAdapter);
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(DatabaseError databaseError) {
-//
-//                    }
-//                });
-//            }
-//        });
-//    }
+    public boolean isEmpty(EditText editText) {
+        String input  = editText.getText().toString().trim();
+        return input.length() == 0;
+    }
+
+    public static void setError(EditText editText, String errorString) {
+
+        editText.setError(errorString);
+
+    }
+
+    public static void clearError(EditText editText) {
+
+        editText.setError(null);
+
+    }
 }
